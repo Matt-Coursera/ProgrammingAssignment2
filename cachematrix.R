@@ -1,6 +1,7 @@
-## This function should delight and amaze all that witness it and it's outpouring of wisdom.
+## This function should delight and amaze all that witness it and it's outpouring of wisdom.  
+##  Well at least that is the hope!    ;-)
 ##  
-## At a minimum, it should should check and see if the matrix inversion has already been completed.
+## At a minimum, it should check and see if the matrix inversion has already been completed.
 ## If it has, use the cached value due to the costly nature of inverting a matrix.
 ## If it hasn't been already inverted and cached, it should invert it, cache it, and return it.
 ## This should save the next poor redneck trying to invert it a bit of processing time.
@@ -9,8 +10,8 @@
 
 
 
-## Creates a group of functions to get and set an inverteible matrix.
-##  Then a group of functions to set and / or get it, as needed.    We'll see how it goes.
+## Creates a group of functions to get and set an invertible matrix.
+##  Then a group of functions to set and / or get the cached matrix, as needed.    We'll see how it goes.
 
 makeCacheMatrix <- function(x = matrix()) {
         
@@ -24,7 +25,7 @@ makeCacheMatrix <- function(x = matrix()) {
         
         invrs <<-  NULL }  # Keeping clean              
         
-                      get = function() x
+                get = function() x
                 setinvrs = function(inverse) invrs <<- inverse
                 getinvrs = function() invrs
                 list(set=set, get=get, setinvrs=setinvrs, getinvrs=getinvrs)
